@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HaptiView support</title>
+<style>body{font:16px/1.55 -apple-system,system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#16181f;background:#fff}h1{font-size:26px}h2{font-size:18px;margin-top:28px}code{background:#f1f2f6;padding:1px 5px;border-radius:4px}</style>
+</head><body>
+<h1>HaptiView support</h1>
+<p>HaptiView is a web video player for iPhone that turns a video's haptic track into smooth vibration, in sync with playback. Made by Studio Rosell.</p>
+
+<h2>Getting started</h2>
+<ol>
+<li>Open HaptiView and tap <b>Open web player</b>.</li>
+<li>Tap the demo icon in the bottom bar to try the built-in demo, or type a site address.</li>
+<li>Tap <b>Start</b> (top right) once. iPhone needs one tap before the motor may run.</li>
+<li>Play the video. Pause, seek or leave the page and the vibration stops.</li>
+</ol>
+
+<h2>Troubleshooting</h2>
+<ul>
+<li><b>No vibration:</b> check Settings → Sounds &amp; Haptics → System Haptics is on, and that you tapped Start. Try <b>Test pulse</b> on the home screen.</li>
+<li><b>Out of sync:</b> use the sync offset slider (±500 ms) on the home screen.</li>
+<li><b>Too strong or weak:</b> use the intensity slider.</li>
+<li>Haptics play only while HaptiView is open on screen; iOS does not allow the haptic motor in the background.</li>
+</ul>
+
+<h2>For site developers</h2>
+<p>Inside HaptiView every page gets <code>window.PulseLink.send({type:'sample', t, i})</code>, where <code>t</code> is the video time in ms and <code>i</code> is the intensity from 0 to 1. <code>navigator.vibrate()</code> works too. Send 20–40 samples per second while the video plays; the app stops the motor on pause, seek and navigation.</p>
+
+<h2>Contact</h2>
+<p>support@studiorosell.com</p>
+<p><a href="privacy.html">Privacy policy</a></p>
+</body></html>
